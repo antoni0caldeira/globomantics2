@@ -1,7 +1,11 @@
+import { useHistory } from "react-router-dom";
 import "./search-results-row.css";
 
 const SearchResultsRow = ({house}) => {
-    const setActive = () => {};
+    const history = useHistory();
+    const setActive = () => {
+        history.push(`/house/${house.id}`);
+    };
 
     return (
         <tr onClick={setActive}>

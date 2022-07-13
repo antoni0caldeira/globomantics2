@@ -1,5 +1,7 @@
 // import { Component } from 'react';
+import { Route } from 'react-router-dom';
 import logo from './GloboLogo.png';
+
 
 // class Header extends Component {
 //   render() {
@@ -27,7 +29,7 @@ import logo from './GloboLogo.png';
  const Header = (props) => (
      <header className="row">
          <div className="col-md-5">
-             <img src={logo} className="logo" alt="logo" />
+             <a href={"../"}>  <img src={logo} className="logo" alt="logo" /></a>
              </div>
             <div className="col-md-7 mt-5 subtitle">
                  {props.subtitle}

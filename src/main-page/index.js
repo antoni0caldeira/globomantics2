@@ -5,6 +5,7 @@ import Header from './Header';
 import FeaturedHouse from './featureHouse';
 import SearchResults from '../search-results';
 import HouseFilter from './house-filter';
+import HouseFromQuery from './houseFromQuery';
 
 function App() {
   const [allHouses, setAllHouses] = useState([]);
@@ -24,14 +25,20 @@ function App() {
     }
   }, [allHouses]);
 
+  const subtitle = <Header subtitle="Providing Hos all over the world" />
+
+
   return (
     <Router>
       <div className="container"> 
-        <Header subtitle="Providing Hos all over the world" />
+        {subtitle}
         <HouseFilter allHouses={allHouses} />
         <Switch>
           <Route path ="/searchresults/:country">
             <SearchResults allHouses={allHouses} />
+          </Route>
+          <Route path="/house/:id">
+            <HouseFromQuery allHouses={allHouses} />
           </Route>
           <Route path="/">
             <FeaturedHouse house={featuredHouse}> </FeaturedHouse>
